@@ -114,18 +114,21 @@ string Board::winDetection()
 	for (int i = 0; i < 64; i += 4)
 	{
 		l = i;
-		if (board[l] == board[l + 1] && board[l] == board[l + 2] && board[l] == board[l + 3])
+
+		if (board[l] == board[l + 1] && board[l] == board[l + 2] && board[l] == board[l + 3])			//horizontal from front vieuw
 		{
 			return board[l];
 		}
-		if(i>-1&&i<4||i>15&&i<20||i>31&&i<36||i>47&&i<52)
+
+		if(i>-1&&i<4||i>15&&i<20||i>31&&i<36||i>47&&i<52)												//vertical from front vieuw
 		{
 			if(board[l] == board[l + 4] && board[l] == board[l + 8] && board[l] == board[l + 12])
 			{
 				return board[l];
 			}
 		}
-		if(i==0||i==16||i==32||i==48)
+
+		if(i==0||i==16||i==32||i==48)																	//crosses from front vieuw
 		{
 			if(	(board[l] == board[l + 5] && board[l] == board[l + 10] && board[l] == board[l + 15])||
 				(board[l + 3] == board[l + 6] && board[l] == board[l + 9] && board[l] == board[l + 12]))
@@ -136,24 +139,35 @@ string Board::winDetection()
 	}
 	for (int j = 0; j < 16; j++)
 	{
-		if(board[l] == board[l + 16] && board[l] == board[l + 32] && board[l] == board[l + 48])
+		if(board[l] == board[l + 16] && board[l] == board[l + 32] && board[l] == board[l + 48])			//depth from front vieuw
 		{
 			return board[l];
 		}
+
 		if (j == 0 || j == 4 || j == 8 || j == 12)
 		{
-			if (board[l] == board[l + 17] && board[l] == board[l + 34] && board[l] == board[l + 51])
+			if (board[l] == board[l + 17] && board[l] == board[l + 34] && board[l] == board[l + 51])	//diagnal from above vieuw
 			{
 				return board[l];
 			}
 		}
+
 		if (j == 3 || j == 7|| j == 11|| j == 16)
 		{
-			if (board[l] == board[l + 15] && board[l] == board[l + 30] && board[l] == board[l + 45])
+			if (board[l] == board[l + 15] && board[l] == board[l + 30] && board[l] == board[l + 45])	//other diagnal from above vieuw
 			{
 				return board[l];
 			}
 		}
+	}
+
+	if( (board[0] == board[21] && board[l] == board[42] && board[l] == board[63])||						//crosses through the cube
+		(board[3] == board[22] && board[l] == board[41] && board[l] == board[60])||
+		(board[12] == board[25] && board[l] == board[38] && board[l] == board[51])||
+		(board[15] == board[26] && board[l] == board[37] && board[l] == board[48]) 
+		)
+	{
+
 	}
 	return "";
 }
