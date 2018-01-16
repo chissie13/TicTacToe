@@ -158,15 +158,14 @@ string Board::winDetection()
 				return board[j];
 			}
 		}
-	}
-
-	if( (board[0] == board[21] && board[0] == board[42] && board[0] == board[63])||						//crosses through the cube
-		(board[3] == board[22] && board[3] == board[41] && board[3] == board[60])||
-		(board[12] == board[25] && board[12] == board[38] && board[12] == board[51])||
-		(board[15] == board[26] && board[15] == board[37] && board[15] == board[48]) 
-		)
-	{
-
+		if ((board[0] == board[21] && board[0] == board[42] && board[0] == board[63]) ||						//crosses through the cube
+			(board[3] == board[22] && board[3] == board[41] && board[3] == board[60]) ||
+			(board[12] == board[25] && board[12] == board[38] && board[12] == board[51]) ||
+			(board[15] == board[26] && board[15] == board[37] && board[15] == board[48])
+			)
+		{
+			return board[j];
+		}
 	}
 	return "";
 }
