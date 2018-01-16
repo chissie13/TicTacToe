@@ -125,7 +125,11 @@ string Board::winDetection()
 				return board[l];
 			}
 		}
-		if()
+		if(i==0||i==16||i==32||i==48)
+		{
+			if(	(board[l] == board[l + 5] && board[l] == board[l + 10] && board[l] == board[l + 15])||
+				(board[l + 3] == board[l + 6] && board[l] == board[l + 9] && board[l] == board[l + 12])
+		}
 	}
 	return "";
 }
