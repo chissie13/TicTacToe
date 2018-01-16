@@ -49,17 +49,21 @@ void WindowObserver::print(Subject &s)
 
 				if (i == 0) {
 					string xyz = "   " + line + " ";
+					//console.printf(xyz.c_str());
 					cout << xyz.c_str();
 				}
 				else {
 					string xyz = "|  " + line + " ";
+					//console.printf(xyz.c_str());
 					cout << xyz.c_str();
 				}
 
 			}
 		}
 		if (o != 3)
+			//console.printf("\n  ______________________   _____________________   _____________________   _____________________\n");
 			cout << "\n  ______________________   _____________________   _____________________   _____________________\n";
 	}
+	//console.printf("\n");
 	cout << "\n";
 }
