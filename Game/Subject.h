@@ -23,6 +23,8 @@ public:
 	void notify();
 	string * get_board();
 	void setPlayers(int);
+	bool isWinner();
+	string getWinner();
 	bool gameloop();
 	Subject();
 };

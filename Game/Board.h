@@ -14,6 +14,7 @@ public:
 	bool inputCorrect(string place);
 	void switchTurn();
 	char get_turn();
+	string winDetection();
 
 
 private:
@@ -22,6 +23,5 @@ private:
 	string board[64];
 	void fillBoard();
 	char turn;
-	string winDetection();
 };
 

@@ -144,7 +144,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Board.h" />
-    <ClInclude Include="ConsoleLogger.h" />
     <ClInclude Include="Observer.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SoundObserver.h" />
@@ -155,8 +154,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Board.cpp" />
-    <ClCompile Include="ConsoleLogger.cpp" />
-    <ClCompile Include="ConsoleLoggerHelper.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="SoundObserver.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -167,12 +164,6 @@
     </ClCompile>
     <ClCompile Include="Subject.cpp" />
     <ClCompile Include="WindowObserver.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ConsoleLoggerHelper.exe">
-      <DeploymentContent>true</DeploymentContent>
-      <FileType>RES</FileType>
-    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

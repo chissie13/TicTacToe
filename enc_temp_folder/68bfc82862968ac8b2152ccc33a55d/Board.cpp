@@ -111,16 +111,16 @@ string Board::winDetection()
 {
 	int k, l, p;
 	bool win = false;
-	for (int i = 0; i < 64; i += 4)
-	{										first time: k=0 i=0 l=0		second time:k=0 i=4 l=4
-		l = i;
-		if (board[l] == board[l + 1] && board[l] == board[l + 2] && board[l] == board[l + 3])
+	for (int j = 0; j < 4; j++)
+	{
+		k = j * 16;
+		for (int i = 0; i < 16; i += 4)
 		{
-			return board[l];
-		}
-		if(i==0||i==16||i==32||i==48)
-		{
-			if(board[l] == board[l + 4] && board[l] == board[l + 8] && board[l] == board[l + 12])
+			l = k + i;
+			if ((board[l] == board[l + 1] && board[l] == board[l + 2] && board[l] == board[l + 3]) ||
+			{
+				return board[l];
+			}
 		}
 	}
 	return "";

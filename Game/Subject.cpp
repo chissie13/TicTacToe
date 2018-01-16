@@ -29,39 +29,37 @@ string * Subject::get_board()
 	return board.get_board();
 }
 
+string Subject::getWinner()
+{
+	return board.winDetection();
+}
+
 void Subject::setPlayers(int players)
 {
 	board.setPlayers(players);
 }
 
+bool Subject::isWinner()
+{
+	return board.isWinner();
+}
+
 bool Subject::gameloop()
 {
-	system("cls");
 	
 	printHeader();
 
 	handleInput();
 	board.switchTurn();
+	system("cls");
+
 	return !board.isWinner();
 }
 
 void Subject::printHeader()
 {
-	cout << R"(___________.__                                 /\          _____                        .__                
-\__    ___/|  |__   ____   _____ _____    _____)/______   /  _  \   _____ _____  _______|__| ____    ____  
-  |    |   |  |  \ /  _ \ /     \\__  \  /  ___//  ___/  /  /_\  \ /     \\__  \ \___   /  |/    \  / ___\ 
-  |    |   |   Y  (  <_> )  Y Y  \/ __ \_\___ \ \___ \  /    |    \  Y Y  \/ __ \_/    /|  |   |  \/ /_/  >
-  |____|   |___|  /\____/|__|_|  (____  /____  >____  > \____|__  /__|_|  (____  /_____ \__|___|  /\___  / 
-                \/             \/     \/     \/     \/          \/      \/     \/      \/       \//_____/  )" << endl;
-
-	cout << R"( _____ _        _____            _____              _________  __   __ _      ______ _     _   _ _____ 
-|_   _(_)      |_   _|          |_   _|            /   |  _  \ \ \ / /| |     | ___ \ |   | | | /  ___|
-  | |  _  ___    | | __ _  ___    | | ___   ___   / /| | | | |  \ V / | |     | |_/ / |   | | | \ `--. 
-  | | | |/ __|   | |/ _` |/ __|   | |/ _ \ / _ \ / /_| | | | |  /   \ | |     |  __/| |   | | | |`--. \
-  | | | | (__    | | (_| | (__    | | (_) |  __/ \___  | |/ /  / /^\ \| |____ | |   | |___| |_| /\__/ /
-  \_/ |_|\___|   \_/\__,_|\___|   \_/\___/ \___|     |_/___/   \/   \/\_____/ \_|   \_____/\___/\____/ 
-                                                                                                       
-                                                                                                       )" << endl;
+	cout << R"(	
+	vlak 1			vlak 2			vlak 3			vlak 4)" << endl;
 	cout << string(10, '\n');
 }
 
