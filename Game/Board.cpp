@@ -129,6 +129,9 @@ string Board::winDetection()
 		{
 			if(	(board[l] == board[l + 5] && board[l] == board[l + 10] && board[l] == board[l + 15])||
 				(board[l + 3] == board[l + 6] && board[l] == board[l + 9] && board[l] == board[l + 12])
+			{
+				return board[l];
+			}
 		}
 	}
 	return "";
