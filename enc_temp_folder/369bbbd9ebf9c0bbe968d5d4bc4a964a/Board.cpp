@@ -95,8 +95,7 @@ string Board::winDetection()
 
 		if (j>-1 && j<4 || j>15 && j<20 || j>31 && j<36 || j>47 && j<52)								//vertical from front view
 		{
-			if( (board[j] == board[j + 4] && board[j] == board[j + 8] && board[j] == board[j + 12])||
-				(board[j] == board[j + 20] && board[j] == board[j + 40] && board[j] == board[j + 60]))	//diagnal from side view
+			if (board[j] == board[j + 4] && board[j] == board[j + 8] && board[j] == board[j + 12])
 			{
 				return board[j];
 			}
@@ -124,14 +123,6 @@ string Board::winDetection()
 			)
 		{
 			return board[j];
-		}
-
-		if (j == 12 || j == 13 || j == 14 || j == 15)													//other diagnal from side view
-		{
-			if (board[j] == board[j + 12] && board[j] == board[j + 24] && board[j] == board[j + 48])
-			{
-				return board[j];
-			}
 		}
 	}
 	return "";
