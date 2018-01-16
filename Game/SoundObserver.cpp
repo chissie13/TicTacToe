@@ -9,5 +9,5 @@ using namespace std;
 
 void SoundObserver::update(Subject &s)
 {
-	Beep(523, 250);
+	Beep(4000, 250);
 }

@@ -18,10 +18,10 @@ public:
 
 
 private:
-	char players[5] = { 'X', 'O' , 'Z', 'S', 'B'};
-	int playernum = 2;
+	char players[5] = { 'X', 'O' , 'Y', 'H', 'I' };
+	int amountOfPlayers;
 	string board[64];
 	void fillBoard();
-	char turn;
+	int turn = 0;
 };
 
