@@ -24,6 +24,7 @@ public:
 	string * get_board();
 	void setPlayers(int);
 	bool isWinner();
+	Board get_board_object();
 	string getWinner();
 	bool gameloop();
 	Subject();

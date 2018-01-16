@@ -9,5 +9,6 @@ using namespace std;
 
 void SoundObserver::update(Subject &s)
 {
-	Beep(4000, 250);
+	int sound = s.get_board_object().get_turn_int();
+	Beep(250*(2^sound), 250);
 }

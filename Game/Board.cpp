@@ -70,8 +70,6 @@ void Board::switchTurn()
 
 string Board::winDetection()
 {
-	int k, l, p;
-	bool win = false;
 	for (int l = 0; l < 64; l += 4)
 	{
 		if (board[l] == board[l + 1] && board[l] == board[l + 2] && board[l] == board[l + 3])			//horizontal from front view
@@ -111,7 +109,7 @@ string Board::winDetection()
 			}
 		}
 
-		if (j == 3 || j == 7 || j == 11 || j == 16)
+		if (j == 3 || j == 7 || j == 11 || j == 15)
 		{
 			if (board[j] == board[j + 15] && board[j] == board[j + 30] && board[j] == board[j + 45])	//other diagnal from above view
 			{
@@ -148,4 +146,9 @@ char Board::get_turn()
 bool Board::isWinner()
 {
 	return winDetection().length() != 0;
+}
+
+int Board::get_turn_int()
+{
+	return turn;
 }

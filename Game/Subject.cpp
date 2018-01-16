@@ -29,6 +29,11 @@ string * Subject::get_board()
 	return board.get_board();
 }
 
+Board Subject::get_board_object()
+{
+	return board;
+}
+
 string Subject::getWinner()
 {
 	return board.winDetection();

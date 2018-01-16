@@ -15,6 +15,7 @@ public:
 	void switchTurn();
 	char get_turn();
 	string winDetection();
+	int get_turn_int();
 
 
 private:

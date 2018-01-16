@@ -32,7 +32,7 @@ void WindowObserver::print(Subject &s)
 {
 	string * board = s.get_board();
 
-	int k, l, p;
+	int k, p;
 
 	for (int o = 0; o < 4; o++)
 	{
