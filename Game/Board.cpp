@@ -140,6 +140,20 @@ string Board::winDetection()
 		{
 			return board[l];
 		}
+		if (j == 0 || j == 4 || j == 8 || j == 12)
+		{
+			if (board[l] == board[l + 17] && board[l] == board[l + 34] && board[l] == board[l + 51])
+			{
+				return board[l];
+			}
+		}
+		if (j == 3 || j == 7|| j == 11|| j == 16)
+		{
+			if (board[l] == board[l + 15] && board[l] == board[l + 30] && board[l] == board[l + 45])
+			{
+				return board[l];
+			}
+		}
 	}
 	return "";
 }
