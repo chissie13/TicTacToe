@@ -3,12 +3,12 @@
 #include "iostream"
 
 
-Board::Board()
+Board::Board()																							//Constructor
 {
 	fillBoard();
 }
 
-void Board::fillBoard()
+void Board::fillBoard()																					//Fills the array for the board
 {
 	string letter[] = { "A", "B", "C", "D", "E", "F", "G", "H" };
 
@@ -19,7 +19,7 @@ void Board::fillBoard()
 	}
 }
 
-bool Board::inputCorrect(string place)
+bool Board::inputCorrect(string place)																	//Checks if the input is correct
 {
 	if (place.length() != 2)
 		return false;
@@ -29,7 +29,7 @@ bool Board::inputCorrect(string place)
 	return false;
 }
 
-bool Board::changeField(string place)
+bool Board::changeField(string place)																	//Changes a field on the board
 {
 	for (int i = 0; i < 64; i++)
 		if (place == board[i])
@@ -39,28 +39,8 @@ bool Board::changeField(string place)
 		}
 	return false;
 }
-/*
-void Board::switchTurn()
-{
-	int size = (sizeof(players) / sizeof(*players));
 
-	int currentplayer;
-
-	for (int i = 0; i < size; i++)
-	{
-		if (players[i] == turn)
-			currentplayer = i;
-	}
-
-	if (currentplayer == (amountOfPlayers - 1))
-		turn = players[0];
-	else
-		turn = players[currentplayer + 1];
-
-
-}
-*/
-void Board::switchTurn()
+void Board::switchTurn()																				//Switches the turn to the next player
 {
 	turn += 1;
 	if (turn >= amountOfPlayers)
@@ -68,7 +48,7 @@ void Board::switchTurn()
 
 }
 
-string Board::winDetection()
+string Board::winDetection()																			//Checks who has won
 {
 	for (int l = 0; l < 64; l += 4)
 	{
@@ -137,27 +117,27 @@ string Board::winDetection()
 	return "";
 }
 
-void Board::setPlayers(int players)
+void Board::setPlayers(int players)																		//Sets the amount of players
 {
 	amountOfPlayers = players;
 }
 
-string * Board::get_board()
+string * Board::get_board()																				//Returns the array board
 {
 	return board;
 }
 
-char Board::get_turn()
+char Board::get_turn()																					//Return which players turn it is
 {
 	return players[turn];
 }
 
-bool Board::isWinner()
+bool Board::isWinner()																					//Returns if theres a winner
 {
 	return winDetection().length() != 0;
 }
 
-int Board::get_turn_int()
+int Board::get_turn_int()																				//return the turn
 {
 	return turn;
 }

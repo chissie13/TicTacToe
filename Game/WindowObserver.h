@@ -4,10 +4,10 @@
 class WindowObserver : public Observer
 {
 public:
-	void update(Subject &s);
-	WindowObserver();
+	WindowObserver(Subject &sub);
 	~WindowObserver();
+	void update();
 private:
-	void print(Subject &s);
-	void WindowObserver::setupConsole();
+	void print();
+	Subject &s;
 };

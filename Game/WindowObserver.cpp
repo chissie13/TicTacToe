@@ -6,31 +6,25 @@
 
 using namespace std;
 
-void WindowObserver::update(Subject &s)
+void WindowObserver::update()													//Clear screen and print board layout
 {
 	system("cls");
 
-	print(s);
+	print();
 }
 
-WindowObserver::WindowObserver()
+WindowObserver::WindowObserver(Subject &sub)	: s(sub)													//Constructor
 {
-	setupConsole();
 }
 
-void WindowObserver::setupConsole()
-{
-
-}
-
-WindowObserver::~WindowObserver()
+WindowObserver::~WindowObserver()														//Destructor
 {
 
 }
 
-void WindowObserver::print(Subject &s)
+void WindowObserver::print()													//Print the board
 {
-	string * board = s.get_board();
+	string *board = s.get_board();
 
 	int k, p;
 	cout << R"(	

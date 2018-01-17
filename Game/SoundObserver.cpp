@@ -7,14 +7,12 @@
 
 using namespace std;
 
-void SoundObserver::update(Subject &s)
+SoundObserver::SoundObserver(Subject &sub) :s(sub)
 {
-	int sound = s.get_board_object().get_turn_int();
-	Beep(250*(2^sound), 1000);
 }
 
-void SoundObserver::WinSound()
+void SoundObserver::update()								//Makes sounds depending on player
 {
-	for (int i = 0; i < 1000;i++)
-		Beep(i, 1);
+	int sound = s.get_board_object().get_turn_int();
+	Beep(250*(2^sound), 250);
 }

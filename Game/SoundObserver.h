@@ -1,10 +1,13 @@
 #pragma once
-class Subject;
 #include "Observer.h"
+
+class Subject;
 
 class SoundObserver : public Observer
 {
 public:
-	void update(Subject &s);
-	void WinSound();
+	SoundObserver(Subject &s);
+	void update();
+private:
+	Subject & s;
 };
