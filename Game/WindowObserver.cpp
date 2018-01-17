@@ -33,6 +33,8 @@ void WindowObserver::print(Subject &s)
 	string * board = s.get_board();
 
 	int k, p;
+	cout << R"(	
+	vlak 1			vlak 2			vlak 3			vlak 4)" << "\n" << endl;
 
 	for (int o = 0; o < 4; o++)
 	{

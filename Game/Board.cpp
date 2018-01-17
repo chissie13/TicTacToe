@@ -128,7 +128,7 @@ string Board::winDetection()
 
 		if (j == 12 || j == 13 || j == 14 || j == 15)													//other diagnal from side view
 		{
-			if (board[j] == board[j + 12] && board[j] == board[j + 24] && board[j] == board[j + 48])
+			if (board[j] == board[j + 12] && board[j] == board[j + 24] && board[j] == board[j + 36])
 			{
 				return board[j];
 			}

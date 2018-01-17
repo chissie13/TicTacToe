@@ -63,8 +63,6 @@ bool Subject::gameloop()
 
 void Subject::printHeader()
 {
-	cout << R"(	
-	vlak 1			vlak 2			vlak 3			vlak 4)" << endl;
 	cout << string(10, '\n');
 }
 

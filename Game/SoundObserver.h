@@ -6,4 +6,5 @@ class SoundObserver : public Observer
 {
 public:
 	void update(Subject &s);
+	void WinSound();
 };
