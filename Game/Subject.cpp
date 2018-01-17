@@ -24,6 +24,36 @@ void Subject::notify()																					//Notifies the observers
 	}
 }
 
+bool Subject::gameloop()																				//Goes through one turn
+{
+	handleInput();
+	board.switchTurn();
+	system("cls");
+
+	return (!board.isWinner() && !board.is_tie());
+}
+
+void Subject::handleInput()																				//Handle the input
+{
+	bool incorrect = true;
+	string place;
+
+	cout << endl << "Player " << board.get_turn() << " Where would you like to put your mark? " << endl;
+
+	while (incorrect) {
+		cin >> place;
+
+		place[0] = toupper(place[0]);
+		string input = place;
+
+		incorrect = !board.inputCorrect(place);
+
+		if (incorrect)
+			cout << input << " - is not a valid location" << endl;
+	}
+	board.changeField(place);
+}
+
 string *Subject::get_board()																			//Returns the board
 {
 	return board.get_board();
@@ -47,35 +77,4 @@ void Subject::setPlayers(int players)																	//Sets the amount of playe
 bool Subject::isWinner()																				//Getter if theres a winner
 {
 	return board.isWinner();
-}
-
-bool Subject::gameloop()																				//Goes through one turn
-{
-
-	handleInput();
-	board.switchTurn();
-	system("cls");
-
-	return !board.isWinner();
-}
-
-void Subject::handleInput()																				//Handle the input
-{
-	bool incorrect = true;
-	string place;
-
-	cout << endl << "Player " << board.get_turn() << " Where would you like to put your mark? " << endl;
-
-	while (incorrect) {
-		cin >> place;
-
-		place[0] = toupper(place[0]);
-		string input = place;
-
-		incorrect = !board.inputCorrect(place);
-
-		if (incorrect)
-			cout << input << " - is not a valid location" << endl;
-	}
-	board.changeField(place);
 }

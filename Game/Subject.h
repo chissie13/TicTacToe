@@ -27,4 +27,5 @@ public:
 	string getWinner();
 	bool gameloop();
 	Subject();
+	bool is_tie();
 };

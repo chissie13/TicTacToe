@@ -48,6 +48,16 @@ void Board::switchTurn()																				//Switches the turn to the next play
 
 }
 
+bool Board::is_tie()																					//returns if the game is a tie
+{
+	for (int i = 0; i < sizeof(board) / sizeof(board[0]); i++)
+	{
+		if (board[i].length() == 2)
+			return false;
+	}
+	return true;
+}
+
 string Board::winDetection()																			//Checks who has won
 {
 	for (int l = 0; l < 64; l += 4)

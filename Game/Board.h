@@ -16,6 +16,7 @@ public:
 	char get_turn();
 	string winDetection();
 	int get_turn_int();
+	bool is_tie();
 
 
 private:
